@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+
+    <persistence-unit name="smarthome">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+        <class>smarthome.persistence.datamodel.HouseDataModel</class>
+        <class>smarthome.persistence.datamodel.ActuatorTypeDataModel</class>
+        <class>smarthome.persistence.datamodel.SensorModelDataModel</class>
+        <class>smarthome.persistence.datamodel.ActuatorModelDataModel</class>
+        <class>smarthome.persistence.datamodel.RoomDataModel</class>
+        <class>smarthome.persistence.datamodel.ActuatorDataModel</class>
+        <class>smarthome.persistence.datamodel.DeviceDataModel</class>
+        <class>smarthome.persistence.datamodel.SensorTypeDataModel</class>
+        <class>smarthome.persistence.datamodel.ReadingDataModel</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
+
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/smarthome"/>
+
+            <property name="jakarta.persistence.jdbc.user" value="group6"/>
+            <property name="jakarta.persistence.jdbc.password" value="group6"/>
+
+            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+
+            <!--FOR ERROR CATCHING-->
+            <!--            <property name="hibernate.show_sql" value="true"/>-->
+            <!--            <property name="hibernate.format_sql" value="true"/>-->
+            <!--            <property name="hibernate.use_sql_comments" value="true"/>-->
+        </properties>
+    </persistence-unit>
+</persistence>
